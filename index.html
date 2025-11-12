@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Любовь к себе — Основательницы</title>
+  <meta name="theme-color" content="#e11d72">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Любовь к себе</h1>
+      <p class="subtitle">Женский клуб «Основательницы». Автор — Лиора, Муза — Лиза</p>
+    </div>
+    <div class="actions">
+      <button id="installBtn" class="btn secondary">Установить</button>
+      <a class="btn" href="https://t.me/lyorasakha" target="_blank">Музыка в Telegram</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="tabs">
+      <button data-tab="club" class="active">Клуб</button>
+      <button data-tab="wheel">Колесо</button>
+      <button data-tab="habits">Привычки</button>
+      <button data-tab="practices">Практики</button>
+      <button data-tab="missions">Задания</button>
+      <button data-tab="sync">Синхро</button>
+    </nav>
+
+    <section id="tab-club" class="card">
+      <h2>Клуб «Основательницы»</h2>
+      <p class="muted">Пространство для женщин, которые возвращаются к себе — через любовь, тело, практики и магию повседневности.</p>
+      <hr>
+      <p id="dailyQuote" class="quote"></p>
+
+      <div class="card soft">
+        <h3>Уведомления с утренними посланиями</h3>
+        <label class="row">
+          <input type="checkbox" id="quoteNotifToggle">
+          Включить
+        </label>
+        <label class="row">
+          Время: <input type="number" id="quoteHour" min="0" max="23" value="8"> часов
+        </label>
+        <button id="testNotif" class="btn secondary">Тест уведомления</button>
+        <p class="hint">Совет: ставь раннее время, чтобы начать день с хорошей мысли.</p>
+      </div>
+    </section>
+
+    <section id="tab-wheel" class="card hidden">
+      <h2>Колесо баланса</h2>
+      <div id="wheelSvgWrap" class="center"></div>
+      <div id="areasWrap" class="grid"></div>
+      <div class="row gap">
+        <button id="addArea" class="btn secondary">Добавить сферу</button>
+        <button id="resetVals" class="btn">Сброс значений</button>
+      </div>
+      <div class="card soft">
+        <h3>Как читать своё колесо</h3>
+        <ul>
+          <li>Гладкая форма — баланс ок, увеличивай радиус маленькими шагами.</li>
+          <li>Провалы — проверь границы, ресурс и незавершённые задачи.</li>
+          <li>Высокие лучи — опоры. Пусть подпитают слабые сферы.</li>
+        </ul>
+        <h3>Рекомендации на неделю</h3>
+        <ul id="planList"></ul>
+        <textarea id="wheelNote" placeholder="Мой вывод и микро‑шаг на 48 часов…"></textarea>
+      </div>
+    </section>
+
+    <section id="tab-habits" class="card hidden">
+      <div class="row space">
+        <h2>Трекер привычек</h2>
+        <button id="addHabit" class="btn">Добавить привычку</button>
+      </div>
+      <div id="habitsWrap" class="stack"></div>
+    </section>
+
+    <section id="tab-practices" class="card hidden">
+      <h2>Практики</h2>
+      <div id="practicesWrap" class="grid"></div>
+      <dialog id="practiceModal">
+        <form method="dialog" class="modal">
+          <h3 id="pmTitle"></h3>
+          <p id="pmGoal" class="muted"></p>
+          <ol id="pmSteps"></ol>
+          <div class="timer-row">
+            <span id="pmTimer" class="timer">00:00</span>
+            <button id="pmStart" class="btn">Старт</button>
+            <button id="pmReset" class="btn secondary">Сброс</button>
+          </div>
+          <menu>
+            <button id="pmClose" class="btn">Завершить</button>
+          </menu>
+        </form>
+      </dialog>
+    </section>
+
+    <section id="tab-missions" class="card hidden">
+      <h2>Задания для самооценки</h2>
+      <div id="missionsWrap" class="stack"></div>
+    </section>
+
+    <section id="tab-sync" class="card hidden">
+      <h2>Синхронизация и резервная копия</h2>
+      <div class="row gap wrap">
+        <button id="exportJson" class="btn">Скачать бэкап (.json)</button>
+        <label class="btn secondary file">
+          Загрузить бэкап
+          <input type="file" id="importJson" accept="application/json">
+        </label>
+      </div>
+      <small id="lastBackup" class="muted"></small>
+      <div class="card soft">
+        <h3>Бэкап‑код</h3>
+        <p>Скопируй строку и храни в заметках. Вставь сюда и нажми Восстановить.</p>
+        <textarea id="backupCode" placeholder="Будет длинная строка после «Скачать бэкап»"></textarea>
+        <div class="row gap">
+          <button id="genCode" class="btn secondary">Сгенерировать код</button>
+          <button id="restoreCode" class="btn">Восстановить</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>С любовью, <a href="https://t.me/liorasakha" target="_blank">@liorasakha</a> • Муза — <a href="https://t.me/lizzzvas" target="_blank">@lizzzvas</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

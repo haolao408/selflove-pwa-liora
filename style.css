@@ -1,0 +1,35 @@
+
+:root{ --bg1:#ffe4ec; --bg2:#fff; --accent:#e11d72; --muted:#6b7280; }
+*{ box-sizing:border-box; }
+body{ margin:0; font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial; color:#361625; background:linear-gradient(to bottom,var(--bg1),#fff); }
+.topbar{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px; }
+h1{ margin:0; font-size:20px; }
+.subtitle{ margin:2px 0 0; color:var(--muted); font-size:12px; }
+.actions{ display:flex; gap:8px; }
+.btn{ background:var(--accent); color:#fff; border:0; padding:10px 14px; border-radius:12px; cursor:pointer; box-shadow:0 4px 12px rgba(225,29,114,.25); }
+.btn.secondary{ background:#ffd0e1; color:#7e1b4c; }
+.btn:disabled{ opacity:.6; cursor:default; }
+.container{ max-width:980px; margin:0 auto; padding:0 16px 40px; }
+.tabs{ display:grid; grid-template-columns:repeat(6,1fr); gap:8px; }
+.tabs button{ padding:10px; border-radius:10px; border:1px solid #ffd0e1; background:#fff; color:#7e1b4c; cursor:pointer; }
+.tabs button.active{ background:#ffebf3; border-color:#ffb3cf; font-weight:600; }
+.card{ background:#fff; border-radius:20px; box-shadow:0 8px 24px rgba(0,0,0,.06); padding:16px; margin-top:12px; }
+.card.soft{ background:rgba(255,255,255,.8); border:1px dashed #ffd0e1; }
+.center{ display:flex; align-items:center; justify-content:center; }
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+.stack{ display:grid; gap:12px; }
+.row{ display:flex; align-items:center; gap:8px; }
+.row.space{ justify-content:space-between; }
+.row.gap{ gap:10px; }
+.wrap{ flex-wrap:wrap; }
+.muted{ color:var(--muted); }
+.hint{ color:var(--muted); font-size:12px; margin:6px 0 0; }
+.hidden{ display:none; }
+.quote{ color:#b4236c; font-style:italic; }
+textarea{ width:100%; min-height:90px; padding:10px; border-radius:12px; border:1px solid #ffd0e1; }
+input[type="text"], input[type="number"]{ padding:8px 10px; border-radius:10px; border:1px solid #ffd0e1; }
+label.file input{ display:none; }
+.footer{ text-align:center; padding:20px; color:#7e1b4c; }
+.timer{ font-variant-numeric:tabular-nums; font-size:24px; }
+.modal{ min-width:300px; max-width:520px; }
+@media (max-width:720px){ .tabs{ grid-template-columns:repeat(3,1fr); } .actions{ flex-wrap:wrap; } }
